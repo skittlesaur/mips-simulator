@@ -4,17 +4,9 @@ import java.awt.*;
 
 public class Screen {
 
-    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private static double width = screenSize.getWidth();
-    private static double height = screenSize.getHeight();
-
-    public static double getWidth() {
-        return width;
-    }
-
-    public static double getHeight(int i) {
-        return height;
-    }
+    private static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private static final double width = screenSize.getWidth();
+    private static final double height = screenSize.getHeight();
 
     public static int calculateWidth(int size) {
         return (int) (width * size / 1920.0);

@@ -20,12 +20,6 @@ public class SidebarButton extends JButton {
         this.setLocation(0, Screen.calculateHeight(index * 120));
     }
 
-    public SidebarButton(String text, Colors background) {
-        this(text);
-        this.setOpaque(true);
-        this.setBackground(background.getColor());
-    }
-
     public SidebarButton(String text, int index, Colors background) {
         this(text, index);
         this.setOpaque(true);
@@ -35,5 +29,22 @@ public class SidebarButton extends JButton {
     public SidebarButton(String text, int x, int y) {
         this(text);
         this.setLocation(Screen.calculateWidth(x), Screen.calculateHeight(y));
+    }
+
+    public void running() {
+        this.setEnabled(false);
+        this.setText("Running");
+        setOpaque(true);
+        this.setBackground(Colors.RED.getColor());
+        this.setForeground(Colors.WHITE.getColor());
+
+    }
+
+    public void run() {
+        this.setEnabled(true);
+        this.setText("Run");
+        setOpaque(true);
+        this.setBackground(Colors.GREEN.getColor());
+        this.setForeground(Colors.WHITE.getColor());
     }
 }

@@ -1,11 +1,14 @@
 package dev.baraa.mips.graphics;
 
 import javax.swing.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Title extends JPanel {
 
-    private JLabel lastSaved;
-    private JLabel title;
+    private final JLabel saved;
+    private final JLabel title;
 
     public Title() {
 
@@ -14,22 +17,36 @@ public class Title extends JPanel {
         this.setSize(Screen.calculateDimension(1460, 130));
         this.setLayout(null);
 
-        lastSaved = new JLabel("Unsaved");
-        lastSaved.setFont(Fonts.getBold().deriveFont(Fonts.fontSize(24)));
-        lastSaved.setSize(Screen.calculateDimension(1460,24));
-        lastSaved.setLocation(Screen.calculatePoint(0,10));
-        lastSaved.setForeground(Colors.SUBGREY.getColor());
-        this.add(lastSaved);
+        saved = new JLabel("Unsaved");
+        saved.setFont(Fonts.getBold().deriveFont(Fonts.fontSize(24)));
+        saved.setSize(Screen.calculateDimension(1460, 30));
+        saved.setLocation(Screen.calculatePoint(0, 10));
+        saved.setForeground(Colors.SUBGREY.getColor());
+        this.add(saved);
 
         title = new JLabel("Untitled");
         title.setFont(Fonts.getBold().deriveFont(Fonts.fontSize(40)));
-        title.setSize(Screen.calculateDimension(1460,40));
-        title.setLocation(Screen.calculatePoint(0,80));
+        title.setSize(Screen.calculateDimension(1460, 50));
+        title.setLocation(Screen.calculatePoint(0, 80));
         title.setForeground(Colors.BLACK.getColor());
         this.add(title);
     }
 
-    private void updateInfo() {
+    public void setTitle(String title) {
+        this.title.setText(Objects.requireNonNullElse(title, "Untitled"));
+    }
 
+    public void setSaved(boolean saved) {
+        if (saved)
+            this.saved.setText("Saved");
+        else {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+            this.saved.setText("Unsaved Changes (" + dtf.format(now) + ")");
+        }
+    }
+
+    public void setSaved(String text) {
+        saved.setText(text);
     }
 }
