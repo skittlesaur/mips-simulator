@@ -2,11 +2,10 @@ package dev.baraa.mips.units;
 
 public class Register {
 
-    private String name;
     private int value;
 
     public Register() {
-
+        this.value = 0;
     }
 
     public void clear() {
@@ -21,11 +20,4 @@ public class Register {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return "Register{" +
-                "name='" + name + '\'' +
-                ", value=" + value +
-                '}';
-    }
 }
