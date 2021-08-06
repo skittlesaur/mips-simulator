@@ -2,7 +2,7 @@
 
 A basic MIPS assembly language emulator written in Java with a simple graphical user interface. This project replicates MIPS in the absence of register pipelining. However, I intend to include it in the future.
 
-![Program GUI](https://i.ibb.co/hHyJ5nC/Screenshot-8.png) ![Program GUI](https://i.ibb.co/BjCJ6M9/Screenshot-9.png)
+![Program GUI](https://i.ibb.co/BjCJ6M9/Screenshot-9.png)
 
 ## Description
 This project might be used as a basic MIPS code editor and executor. The graphical user interface contains a code editor, a registers display, and a few more useful functionalities. During execution, the program is read line by line without the usage of the registers pipeline - at least for the time being. Which I will add in the future while still retaining the line-by-line execution for run time comparison.
