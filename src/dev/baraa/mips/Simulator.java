@@ -36,7 +36,7 @@ public class Simulator {
         registersFile = new RegistersFile();
         memory = new Memory();
 
-        Fonts.initialize();
+        new Fonts().initialize();
         window = new Window();
     }
 
