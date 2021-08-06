@@ -11,7 +11,7 @@ public class Memory {
     }
 
     public Memory() {
-        this(100);
+        this(64000);
     }
 
     public int readMemory(int index) throws MemoryOutOfBoundsException {
