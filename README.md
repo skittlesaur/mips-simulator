@@ -19,6 +19,6 @@ This project might be used as a basic MIPS code editor and executor. The graphic
 - Files that have been saved are kept in a folder named `saved` in the project file.
 
 ## To-do
-[ ] Add register pipelining
-[ ] Update memory settings through the GUI
-[ ] Improve exceptions handling
+- [ ] Add register pipelining
+- [ ] Update memory settings through the GUI
+- [ ] Improve exceptions handling
