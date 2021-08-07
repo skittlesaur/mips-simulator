@@ -21,14 +21,14 @@ This project might be used as a basic MIPS code editor and executor. The graphic
 - Files that have been saved are kept in a folder named `MipsSimulator/saved` in the documents folder.
 
 ## Version History
-- 0.1
+- Release 0.1
   - Added save file functionality
   - Added open file functionality
   - Added save-exit to unsaved files
   - Improved line-by-line execution
   - Improved GUI smoothness
   - Improved GUI overall look
-- 0.0
+- Pre-release 0.0
   - Added the code editor and registers data
   - Added the line-by-line execution
   - Added custom exceptions
