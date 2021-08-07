@@ -13,6 +13,7 @@ import dev.baraa.mips.units.Memory;
 import dev.baraa.mips.units.RegistersFile;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -31,6 +32,9 @@ public class Simulator {
     private final Memory memory;
     private static Simulator simulator;
 
+    private static File mainFolder;
+    private static File savesFolder;
+
     public Simulator() throws IOException, FontFormatException {
         simulator = this;
         registersFile = new RegistersFile();
@@ -41,6 +45,15 @@ public class Simulator {
     }
 
     public static void main(String[] args) throws IOException, FontFormatException {
+        String docs = FileSystemView.getFileSystemView().getDefaultDirectory().getPath();
+
+        mainFolder = new File(docs + "\\MipsSimulator");
+        if (!mainFolder.exists())
+            mainFolder.mkdirs();
+        savesFolder = new File(mainFolder.getPath() + "\\saves");
+        if (!savesFolder.exists())
+            savesFolder.mkdirs();
+
         new Simulator();
     }
 
@@ -120,19 +133,15 @@ public class Simulator {
     }
 
     public void saveFile() throws IOException {
-        File folder = new File("saves");
-        if (!folder.exists())
-            folder.mkdirs();
-
         File file;
 
         if (fileName == null) {
-            file = new File("Saves/mipsProgram#" + (Objects.requireNonNull(folder.list()).length + 1) + ".mips");
+            file = new File(savesFolder.getPath() + "\\mipsProgram#" + (Objects.requireNonNull(savesFolder.list()).length + 1) + ".mips");
             file.createNewFile();
             fileName = file.getName();
             window.updateTitle();
         } else
-            file = new File("Saves/" + fileName + ".mips");
+            file = new File(savesFolder.getPath() + "\\" + fileName + ".mips");
 
         PrintWriter writer = new PrintWriter(file.getPath(), StandardCharsets.UTF_8);
         String[] code = window.getCodeBox().getCode().split("\n");
@@ -201,5 +210,9 @@ public class Simulator {
 
     public String getFileName() {
         return fileName;
+    }
+
+    public static File getMainFolder() {
+        return mainFolder;
     }
 }

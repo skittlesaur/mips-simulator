@@ -33,6 +33,8 @@ public class Title extends JPanel {
     }
 
     public void setTitle(String title) {
+        if (title.contains("txt"))
+            title.replace(".txt", ".mips");
         this.title.setText(Objects.requireNonNullElse(title, "Untitled"));
     }
 

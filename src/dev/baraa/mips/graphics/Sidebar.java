@@ -61,9 +61,7 @@ public class Sidebar extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
                 fileChooser.setFileFilter(new FileNameExtensionFilter("MIPS Program", "txt", "mips"));
-                if (!new File("saves").exists())
-                    new File("saves").mkdirs();
-                fileChooser.setCurrentDirectory(new File("saves"));
+                fileChooser.setCurrentDirectory(Simulator.getMainFolder());
                 int r = fileChooser.showOpenDialog(null);
                 if (r == JFileChooser.APPROVE_OPTION) {
                     File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
