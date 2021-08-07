@@ -24,3 +24,4 @@ This project might be used as a basic MIPS code editor and executor. The graphic
 - [ ] Add register pipelining
 - [ ] Update memory settings through the GUI
 - [ ] Improve exceptions handling
+- [ ] Naming files when saving
