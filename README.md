@@ -20,6 +20,19 @@ This project might be used as a basic MIPS code editor and executor. The graphic
 - The main memory is initially 256KB in size. This may be modified by using the memory constructor.
 - Files that have been saved are kept in a folder named `MipsSimulator/saved` in the documents folder.
 
+## Version History
+- 0.1
+  - Added save file functionality
+  - Added open file functionality
+  - Added save-exit to unsaved files
+  - Improved line-by-line execution
+  - Improved GUI smoothness
+  - Improved GUI overall look
+- 0.0
+  - Added the code editor and registers data
+  - Added the line-by-line execution
+  - Added custom exceptions
+
 ## To-do
 - [ ] Add register pipelining
 - [ ] Update memory settings through the GUI
