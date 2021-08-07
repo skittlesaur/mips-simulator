@@ -18,7 +18,7 @@ This project might be used as a basic MIPS code editor and executor. The graphic
 ## Notes
 - MIPS's 32 registers are all included in the register file. Yet, only the values of the primary registers ($s, $t, $v, and $a) are presented in the GUI.
 - The main memory is initially 256KB in size. This may be modified by using the memory constructor.
-- Files that have been saved are kept in a folder named `saved` in the project file.
+- Files that have been saved are kept in a folder named `MipsSimulator/saved` in the documents folder.
 
 ## To-do
 - [ ] Add register pipelining
